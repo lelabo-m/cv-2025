@@ -1,11 +1,97 @@
+import { cn } from "@/lib/utils";
+import { Mail, MapPin, Phone } from "lucide-react";
 import Image from "next/image";
-import { PropsWithChildren } from "react";
+import React from "react";
+import { ContactAnimatedPill, ContactAnimatedText } from "./components/contact";
+import { Body, Footer, Hero } from "./components/hero";
+import { Github, Linkedin, Logo } from "./components/icons";
+import { TypographyHeading } from "./components/ux/typography";
+import { PERSONNAL_WEBSITE, PROFILE } from "./config";
 
 export default function Main() {
   return (
     <PdfDocument>
       <PdfPage>
-        <Image
+        <Hero
+          image={
+            <Image
+              alt="Marc Le Labourier at WeWork Lafayette, 2018."
+              src="/hero.png"
+              width={832}
+              height={1248}
+              className="-mt-24 ml-28 h-[150%] w-full object-contain"
+            />
+          }
+        >
+          <div className="flex flex-col gap-2 p-4">
+            <div className="flex gap-4">
+              <a href={PERSONNAL_WEBSITE} className="mt-4">
+                <span className="sr-only">
+                  Marc Le Labourier Personnal Website
+                </span>
+
+                <Logo className="text-accent h-16 w-auto" />
+              </a>
+              <div>
+                <TypographyHeading as="h1">{PROFILE.name}</TypographyHeading>
+                <TypographyHeading as="h2">
+                  {PROFILE.jobTitle}
+                </TypographyHeading>
+              </div>
+            </div>
+
+            <a
+              href={PERSONNAL_WEBSITE}
+              className="text-accent mt- text-sm/6 font-semibold underline"
+            >
+              En découvrir plus sur moi<span aria-hidden="true">→</span>
+            </a>
+
+            <div className="flex w-fit gap-4">
+              <ContactAnimatedText className="text-background">
+                <Mail className="size-4" />
+                marc.lelabourier@gmail.com
+              </ContactAnimatedText>
+
+              <ContactAnimatedText className="text-background">
+                <Phone className="size-4" />
+                (+33)0638415550
+              </ContactAnimatedText>
+            </div>
+
+            <div className="flex w-fit gap-4 @max-2xl/hero:mx-auto">
+              <ContactAnimatedPill className="bg-background">
+                <a href={PROFILE.socials.linkedin.href}>
+                  <Linkedin className="text-accent size-4" />
+                  <span className="sr-only">{"LinkedIn"}</span>
+                </a>
+              </ContactAnimatedPill>
+
+              <ContactAnimatedPill className="bg-background">
+                <a href={PROFILE.socials.github.href}>
+                  <Github className="text-accent size-5" />
+                  <span className="sr-only">{"GitHub"}</span>
+                </a>
+              </ContactAnimatedPill>
+
+              <ContactAnimatedPill className="bg-background gap-2 px-4 text-sm">
+                <MapPin className="size-4" />
+                {PROFILE.location}
+              </ContactAnimatedPill>
+            </div>
+          </div>
+        </Hero>
+
+        <Body>
+          <TypographyHeading as="h3">PROFIL PROFESSIONNEL</TypographyHeading>
+          <p className="text-foreground mt-4 w-full max-w-[80%] font-medium text-pretty">
+            Expertise backend, innovation, traitement & analyse de données, et
+            recherche appliquée. Acquise sur le terrain, en centre R&D et jeunes
+            startups.
+          </p>
+        </Body>
+        <Footer />
+        {/* <Image
           className="dark:invert"
           src="/next.svg"
           alt="Next.js logo"
@@ -59,7 +145,7 @@ export default function Main() {
           >
             Documentation
           </a>
-        </div>
+        </div> */}
       </PdfPage>
       <PdfPage>
         <Image
@@ -122,17 +208,25 @@ export default function Main() {
   );
 }
 
-function PdfDocument({ children }: PropsWithChildren) {
+function PdfDocument({ children }: React.HTMLAttributes<HTMLDivElement>) {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center gap-4 bg-zinc-50 font-sans dark:bg-black">
+    <div className="flex flex-col items-center justify-center gap-4 bg-zinc-50 font-sans dark:bg-black">
       {children}
     </div>
   );
 }
 
-function PdfPage({ children }: PropsWithChildren) {
+function PdfPage({
+  className,
+  children,
+}: React.HTMLAttributes<HTMLDivElement>) {
   return (
-    <main className="bg-background flex min-h-screen w-full max-w-250 flex-col items-center justify-between px-16 py-32 sm:items-start">
+    <main
+      className={cn(
+        "bg-background flex h-[29.7cm] w-[21cm] flex-col items-start justify-between",
+        className,
+      )}
+    >
       {children}
     </main>
   );
