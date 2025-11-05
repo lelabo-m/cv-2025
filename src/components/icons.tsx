@@ -1,13 +1,13 @@
 import React from "react";
 
-export function Logo({ className }: { className?: string }) {
+export function Logo(props: React.HTMLAttributes<SVGElement>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       x="0px"
       y="0px"
       viewBox="240 240  520 520"
-      className={className}
+      {...props}
     >
       <path
         fill="currentColor"

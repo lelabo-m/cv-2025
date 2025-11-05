@@ -6,8 +6,8 @@ const headingVariants = cva(
   {
     variants: {
       level: {
-        h1: "text-3xl font-semibold text-macadamia-beige",
-        h2: "text-5xl font-semibold text-accent-light",
+        h1: "text-3xl font-semibold text-macadamia-beige text-shadow-sm text-shadow-accent/50",
+        h2: "text-5xl font-semibold text-accent-light text-shadow-sm text-shadow-venetian-lace/50",
         h3: "text-2xl font-semibold underline",
         h4: "",
         h5: "",

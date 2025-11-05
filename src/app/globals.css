@@ -11,8 +11,8 @@
   --norfolk-green: oklch(0.3848 0.0435 160.88); /* #2e4b3c; */
   --fence-green: oklch(0.2907 0.0468 179.28); /* #09332c; */
 
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
+  --card: var(--macadamia-beige);
+  --card-foreground: var(--norfolk-green);
   --primary: oklch(0.205 0 0);
   --primary-foreground: oklch(0.985 0 0);
   --secondary: var(--fence-green);

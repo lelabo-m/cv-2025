@@ -1,3 +1,13 @@
+import {
+  Brain,
+  GraduationCap,
+  Handshake,
+  Heart,
+  LucideIcon,
+  Puzzle,
+  Users,
+} from "lucide-react";
+
 export const PERSONNAL_WEBSITE = "https://marc.lelabourier.com";
 
 export const PROFILE = {
@@ -17,3 +27,30 @@ export const PROFILE = {
     },
   },
 };
+
+export const SKILLS = [
+  {
+    title: "Transparent et authentique",
+    icon: Heart,
+  },
+  {
+    title: "Résolution de problèmes",
+    icon: Puzzle,
+  },
+  {
+    title: "Perspective Holistique",
+    icon: Brain,
+  },
+  {
+    title: "Leadership et collaboration",
+    icon: Users,
+  },
+  {
+    title: "Flexibilité et alignement",
+    icon: Handshake,
+  },
+  {
+    title: "Mentorat et apprentissage",
+    icon: GraduationCap,
+  },
+] satisfies { title: string; icon: LucideIcon }[];

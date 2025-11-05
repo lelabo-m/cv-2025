@@ -1,12 +1,17 @@
+import { Card, CardContent } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 import { Mail, MapPin, Phone } from "lucide-react";
 import Image from "next/image";
 import React from "react";
-import { ContactAnimatedPill, ContactAnimatedText } from "./components/contact";
-import { Body, Footer, Hero } from "./components/hero";
-import { Github, Linkedin, Logo } from "./components/icons";
-import { TypographyHeading } from "./components/ux/typography";
-import { PERSONNAL_WEBSITE, PROFILE } from "./config";
+import {
+  ContactAnimatedPill,
+  ContactAnimatedText,
+} from "../components/contact";
+import { Body, Footer, Hero } from "../components/hero";
+import { Github, Linkedin, Logo } from "../components/icons";
+import { TypographyHeading } from "../components/ui/typography";
+import { PERSONNAL_WEBSITE, PROFILE, SKILLS } from "./config";
 
 export default function Main() {
   return (
@@ -30,7 +35,7 @@ export default function Main() {
                   Marc Le Labourier Personnal Website
                 </span>
 
-                <Logo className="text-accent h-16 w-auto" />
+                <Logo className="text-accent h-16 w-auto text-shadow-black text-shadow-lg" />
               </a>
               <div>
                 <TypographyHeading as="h1">{PROFILE.name}</TypographyHeading>
@@ -84,11 +89,24 @@ export default function Main() {
 
         <Body>
           <TypographyHeading as="h3">PROFIL PROFESSIONNEL</TypographyHeading>
-          <p className="text-foreground mt-4 w-full max-w-[80%] font-medium text-pretty">
+          <p className="text-foreground mt-2 w-full font-medium text-pretty">
             Expertise backend, innovation, traitement & analyse de données, et
-            recherche appliquée. Acquise sur le terrain, en centre R&D et jeunes
-            startups.
+            recherche appliquée, acquise sur le terrain, en centre R&D et jeunes
+            startups. <br />
+            Autodidacte (et plus junior) sur la partie Frontend & Design.
           </p>
+          <Separator className="bg-foreground my-4" />
+          <TypographyHeading as="h3">COMPÉTENCES CLÉS</TypographyHeading>
+          <div className="mt-4 grid grid-cols-3 gap-2">
+            {SKILLS.map((item, index) => (
+              <Card key={index} className="items-center px-0 py-4">
+                <CardContent className="flex items-center gap-2 text-sm font-semibold tracking-tighter">
+                  <item.icon className="size-6" />
+                  {item.title}
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </Body>
         <Footer />
         {/* <Image
