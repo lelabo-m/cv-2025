@@ -1,17 +1,19 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
-import { cn } from "@/lib/utils";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Clock, Mail, MapPin, Phone } from "lucide-react";
 import Image from "next/image";
 import React from "react";
+
+import { ContactAnimatedPill, ContactAnimatedText } from "@/components/contact";
+import { Body, Footer, Hero } from "@/components/hero";
+import { Github, Linkedin, Logo } from "@/components/icons";
+import SkillPills from "@/components/skill-pills";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 import {
-  ContactAnimatedPill,
-  ContactAnimatedText,
-} from "../components/contact";
-import { Body, Footer, Hero } from "../components/hero";
-import { Github, Linkedin, Logo } from "../components/icons";
-import { TypographyHeading } from "../components/ui/typography";
-import { PERSONNAL_WEBSITE, PROFILE, SKILLS } from "./config";
+  TypographyBlockquote,
+  TypographyHeading,
+} from "@/components/ui/typography";
+import { cn } from "@/lib/utils";
+import { PERSONNAL_WEBSITE, PROFILE, SKILLS, STACKS } from "./config";
 
 export default function Main() {
   return (
@@ -88,7 +90,9 @@ export default function Main() {
         </Hero>
 
         <Body>
-          <TypographyHeading as="h3">PROFIL PROFESSIONNEL</TypographyHeading>
+          <TypographyHeading as="h3">
+            PROFIL PROFESSIONNEL / OBJECTIFS
+          </TypographyHeading>
           <p className="text-foreground mt-2 w-full font-medium text-pretty">
             Expertise backend, innovation, traitement & analyse de données, et
             recherche appliquée, acquise sur le terrain, en centre R&D et jeunes
@@ -107,8 +111,38 @@ export default function Main() {
               </Card>
             ))}
           </div>
+          <Separator className="bg-foreground my-4" />
+          <TypographyHeading as="h3">
+            FRAMEWORK & TECHNOLOGIES
+          </TypographyHeading>
+          <div className="flex flex-col gap-4">
+            <TypographyBlockquote className="text-secondary text-xs font-medium">
+              Ce que je préfère, mais je suis toujours curieux d&apos;apprendre
+              de nouvelles choses...
+            </TypographyBlockquote>
+
+            <div className="grid grid-cols-2 gap-4">
+              {STACKS.map(({ name, items }, index) => (
+                <Card key={index} className="gap-0 p-4">
+                  <CardHeader className="p-0">
+                    <CardTitle>{name}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="p-0">
+                    {items.map((tech, index) => (
+                      <SkillPills key={index} {...tech} />
+                    ))}
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+            <div className="flex items-center gap-4">
+              <Clock className="size-4" />
+              <span>Pas utiliser depuis un moment...</span>
+            </div>
+          </div>
         </Body>
         <Footer />
+
         {/* <Image
           className="dark:invert"
           src="/next.svg"

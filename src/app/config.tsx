@@ -54,3 +54,116 @@ export const SKILLS = [
     icon: GraduationCap,
   },
 ] satisfies { title: string; icon: LucideIcon }[];
+
+export interface Technology {
+  name: string;
+  mastery: number;
+  rusty?: boolean;
+  max?: number;
+}
+
+export interface Stack {
+  name: string;
+  items: Technology[];
+}
+
+export const STACKS = [
+  {
+    name: "Backend & Architecture",
+    items: [
+      {
+        name: "Python",
+        mastery: 6,
+      },
+      {
+        name: "Rust",
+        mastery: 2,
+      },
+      {
+        name: "C",
+        mastery: 6,
+        rusty: true,
+      },
+      {
+        name: "C++",
+        mastery: 4,
+        rusty: true,
+      },
+      {
+        name: "Ruby/Rails",
+        mastery: 3,
+        rusty: true,
+      },
+    ],
+  },
+  {
+    name: "Frontend",
+    items: [
+      {
+        name: "Typescript",
+        mastery: 4,
+      },
+      {
+        name: "Javascript",
+        mastery: 3,
+      },
+      {
+        name: "React",
+        mastery: 4,
+      },
+      {
+        name: "NextJs",
+        mastery: 5,
+      },
+      {
+        name: "Tailwind Css",
+        mastery: 4,
+      },
+    ],
+  },
+  {
+    name: "Infrastructure & Cloud",
+    items: [
+      {
+        name: "AWS",
+        mastery: 6,
+        max: 12,
+      },
+      {
+        name: "Vercel",
+        mastery: 3,
+      },
+      {
+        name: "Docker",
+        mastery: 2,
+        rusty: true,
+      },
+      {
+        name: "Kubernetes",
+        mastery: 2,
+        rusty: true,
+      },
+    ],
+  },
+  {
+    name: "Thématiques",
+    items: [
+      {
+        name: "Sécurité",
+        mastery: 3,
+        max: 8,
+        rusty: true,
+      },
+      {
+        name: "3D",
+        mastery: 3,
+      },
+      {
+        name: "IA",
+        mastery: 4,
+        max: 12,
+        rusty: true,
+      },
+    ],
+  },
+] satisfies Stack[];
