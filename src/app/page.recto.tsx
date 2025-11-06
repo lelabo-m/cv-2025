@@ -183,7 +183,7 @@ function Footer() {
     year: "numeric",
   });
   return (
-    <footer className="bg-secondary flex w-full items-center justify-between p-2">
+    <footer className="bg-secondary flex w-full flex-1 items-center justify-between p-2">
       <p className="text-accent-light text-sm">
         {"©"} {buildDate.getFullYear()}{" "}
         {"Marc Le Labourier. All rights reserved."}

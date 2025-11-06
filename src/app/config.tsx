@@ -200,26 +200,6 @@ export const TIMELINE = [
       start: "Sept. 2021",
       end: "Fév. 2022",
     },
-    // what: (
-    //   <ExperienceDescription>
-    //     <span>
-    //       Programme conçu pour lancer des maisons d&apos;édition ou des
-    //       entreprises liées au livre.
-    //     </span>
-    //      <ExperienceBulletPoints>
-    //       <li>
-    //         Compréhension approfondie de l&apos;écosystème de l&apos;édition, de
-    //         la viabilité du marché et de la navigation dans le paysage de
-    //         l&apos;édition numérique.
-    //       </li>
-    //       <li>Approfondissement de mes connaissances entrepreneuriales.</li>
-    //       <li>
-    //         Discussions avec des experts, des auteurs et des entrepreneurs
-    //         chevronnés.
-    //       </li>
-    //     </ExperienceBulletPoints>
-    //   </ExperienceDescription>
-    // ),
   },
   {
     title:
@@ -230,23 +210,6 @@ export const TIMELINE = [
       start: "Mai 2021",
       end: "Juin 2021",
     },
-    // what: (
-    //   <ExperienceDescription>
-    //     Formation au droit d&apos;auteur, de l&apos;édition classique et
-    //     numérique et la gestion de projet éditauriaux.
-    //     <ExperienceBulletPoints>
-    //       <li>
-    //         Acquérir de solides compétences en matière de gestion des droits
-    //         d&apos;auteur, de droit de l&apos;édition, et de gestion de projets
-    //         numériques.
-    //       </li>
-    //       <li>
-    //         Compréhension approfondie de du processus éditorial, depuis sa
-    //         conception jusqu&apos;à sa diffusion..
-    //       </li>
-    //     </ExperienceBulletPoints>
-    //   </ExperienceDescription>
-    // ),
   },
   {
     title: "Responsable Backend, Données et Recherche",
@@ -269,15 +232,6 @@ export const TIMELINE = [
             Management des équipes <b>infrastructure & services</b> et{" "}
             <b>recherche</b>.
           </li>
-          {/* <li>
-            Assuré la transition  après le départ du CTO
-            historique.
-          </li> */}
-          {/* <li>
-            Dirigé la conception et le développement d&apos;un nouveau pipeline
-            de données hautement évolutif, remplaçant l&apos;infrastructure
-            historique.
-          </li> */}
           <li>
             Piloté la mise en œuvre des évolutions techniques nécessaires pour
             le pivot de la startup.
@@ -316,15 +270,6 @@ export const TIMELINE = [
       start: "Oct. 2015",
       end: "Sept. 2016",
     },
-    // what: (
-    //   <ExperienceDescription>
-    //     <span>
-    //       Approfondissement des techniques d&apos;Intelligence Artificielle
-    //       (deep learning, réseaux neuronaux, apprentissage automatique) avec un
-    //       fort accent sur la recherche universitaire.
-    //     </span>
-    //   </ExperienceDescription>
-    // ),
   },
   {
     title: "Ingénieur de Recherche - Protection de modèles 3D",
@@ -351,12 +296,6 @@ export const TIMELINE = [
       start: "Jan. 2014",
       end: "Juil. 2014",
     },
-    // what: (
-    //   <ExperienceDescription>
-    //     Encadrement et évaluation pédagogique, animation de cours, ateliers et
-    //     évenements.
-    //   </ExperienceDescription>
-    // ),
   },
   {
     title: "Développeur Full Stack",
@@ -370,17 +309,6 @@ export const TIMELINE = [
       <ExperienceDescription>
         Rejoint une startup pionniére de la synthèse vocale pour élargir
         l&apos;offre produit.
-        {/* <ExperienceBulletPoints>
-          <li>
-            Conçu et développé une plateforme web de commande et de gestion
-            d&apos;enregistrements de comédiens (facturation, emails, catalogue
-            talents, traitement des audios).
-          </li>
-          <li>
-            Refonte UI/UX puis améloration du logiciel d&apos;enregistrement
-            (Windows/macOS) en collaboration directe avec comédiens.
-          </li>
-        </ExperienceBulletPoints> */}
       </ExperienceDescription>
     ),
   },
@@ -392,11 +320,5 @@ export const TIMELINE = [
       start: "Oct. 2012",
       end: "Sept. 2017",
     },
-    // what: (
-    //   <ExperienceDescription>
-    //     Pédagogie intensive, centré sur la pratique et les projets, la
-    //     collaboration, l&apos;innovation, et l&apos;apprentissage continue.
-    //   </ExperienceDescription>
-    // ),
   },
 ] satisfies Experience[];
