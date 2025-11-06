@@ -2,108 +2,114 @@ import { Clock, Mail, MapPin, Phone } from "lucide-react";
 import Image from "next/image";
 
 import { ContactAnimatedPill, ContactAnimatedText } from "@/components/contact";
-import { Github, Linkedin, Logo } from "@/components/icons";
-import { PdfPage } from "@/components/layout";
+import { Github, Linkedin } from "@/components/icons";
+import { Copyright, PdfPage } from "@/components/layout";
+import { Qrcode } from "@/components/qrcode";
 import SkillPills from "@/components/skill-pills";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import {
-  Pagination,
-  PaginationContent,
-  PaginationItem,
-  PaginationLink,
-  PaginationNext,
-} from "@/components/ui/pagination";
-import { Separator } from "@/components/ui/separator";
-import {
-  TypographyBlockquote,
-  TypographyHeading,
-} from "@/components/ui/typography";
+import { TypographyHeading } from "@/components/ui/typography";
 import { PERSONNAL_WEBSITE, PROFILE, SKILLS, STACKS } from "./config";
 
 export function RectoPage() {
   return (
-    <PdfPage>
-      <Hero
-        image={
+    <PdfPage className="from-fence-green/80 via-norfolk-green/40 to-venetian-lace bg-linear-160 from-0% via-40% to-80%">
+      <Header />
+      <Body />
+      <Footer />
+    </PdfPage>
+  );
+}
+
+function Header() {
+  return (
+    <header className="w-full p-4">
+      <div className="relative flex w-full">
+        <div className="z-10 flex w-full flex-col gap-2 p-4">
+          <TypographyHeading as="h1">{PROFILE.name}</TypographyHeading>
+          <TypographyHeading as="h2" className="ml-8">
+            {PROFILE.jobTitle}
+          </TypographyHeading>
+          <TypographyHeading as="h3" className="ml-28">
+            Disponible — CDI mi-temps — RQTH
+          </TypographyHeading>
+
+          <Contacts />
+        </div>
+
+        <div
+          className="absolute inset-y-0 right-0 w-1/3 overflow-hidden"
+          style={{
+            clipPath: "polygon(35% 0, 100% 0, 100% 100%, 0 100%)",
+          }}
+        >
           <Image
             alt="Marc Le Labourier at WeWork Lafayette, 2018."
             src="/hero.png"
-            width={832}
-            height={1248}
-            className="-mt-24 ml-28 h-[150%] w-full object-contain"
+            fill
+            className="object-cover object-[0%_60%]"
           />
-        }
-      >
-        <div className="flex flex-col gap-2 p-4">
-          <div className="flex gap-4">
-            <a href={PERSONNAL_WEBSITE} className="mt-4">
-              <span className="sr-only">
-                Marc Le Labourier Personnal Website
-              </span>
-
-              <Logo className="text-accent h-16 w-auto text-shadow-black text-shadow-lg" />
-            </a>
-            <div>
-              <TypographyHeading as="h1">{PROFILE.name}</TypographyHeading>
-              <TypographyHeading as="h2">{PROFILE.jobTitle}</TypographyHeading>
-            </div>
-          </div>
-
-          <a
-            href={PERSONNAL_WEBSITE}
-            className="text-accent mt- text-sm/6 font-semibold underline"
-          >
-            En découvrir plus sur moi<span aria-hidden="true">→</span>
-          </a>
-
-          <div className="flex w-fit gap-4">
-            <ContactAnimatedText className="text-background">
-              <Mail className="size-4" />
-              marc.lelabourier@gmail.com
-            </ContactAnimatedText>
-
-            <ContactAnimatedText className="text-background">
-              <Phone className="size-4" />
-              (+33)0638415550
-            </ContactAnimatedText>
-          </div>
-
-          <div className="flex w-fit gap-4 @max-2xl/hero:mx-auto">
-            <ContactAnimatedPill className="bg-background">
-              <a href={PROFILE.socials.linkedin.href}>
-                <Linkedin className="text-accent size-4" />
-                <span className="sr-only">{"LinkedIn"}</span>
-              </a>
-            </ContactAnimatedPill>
-
-            <ContactAnimatedPill className="bg-background">
-              <a href={PROFILE.socials.github.href}>
-                <Github className="text-accent size-5" />
-                <span className="sr-only">{"GitHub"}</span>
-              </a>
-            </ContactAnimatedPill>
-
-            <ContactAnimatedPill className="bg-background gap-2 px-4 text-sm">
-              <MapPin className="size-4" />
-              {PROFILE.location}
-            </ContactAnimatedPill>
-          </div>
         </div>
-      </Hero>
+      </div>
+    </header>
+  );
+}
 
-      <Body>
-        <TypographyHeading as="h3">
-          PROFIL PROFESSIONNEL / OBJECTIFS
-        </TypographyHeading>
+function Contacts() {
+  return (
+    <div className="flex justify-between">
+      <div className="flex gap-2">
+        <ContactAnimatedText className="text-background">
+          <Mail className="size-4" />
+          {PROFILE.email}
+        </ContactAnimatedText>
+
+        <ContactAnimatedText className="text-background">
+          <Phone className="size-4" />
+          {PROFILE.phone}
+        </ContactAnimatedText>
+      </div>
+      <div className="flex gap-2">
+        <ContactAnimatedPill className="bg-background">
+          <a href={PROFILE.socials.linkedin.href}>
+            <Linkedin className="text-accent size-4" />
+            <span className="sr-only">{"LinkedIn"}</span>
+          </a>
+        </ContactAnimatedPill>
+
+        <ContactAnimatedPill className="bg-background">
+          <a href={PROFILE.socials.github.href}>
+            <Github className="text-accent size-5" />
+            <span className="sr-only">{"GitHub"}</span>
+          </a>
+        </ContactAnimatedPill>
+
+        <ContactAnimatedPill className="bg-background gap-2 px-4 text-sm">
+          <MapPin className="size-4" />
+          {PROFILE.location}
+        </ContactAnimatedPill>
+      </div>
+    </div>
+  );
+}
+
+function Body() {
+  return (
+    <div className="flex flex-col gap-4 px-4">
+      <div>
+        <TypographyHeading as="h4">PROFIL</TypographyHeading>
         <p className="text-foreground mt-2 w-full font-medium text-pretty">
-          Expertise backend, innovation, traitement & analyse de données, et
-          recherche appliquée, acquise sur le terrain, en centre R&D et jeunes
-          startups. <br />
-          Autodidacte (et plus junior) sur la partie Frontend & Design.
+          Ingénieur polyvalent de 14+ ans d&apos;éxpérience avec une expertise
+          backend, innovation, traitement & analyse de données, et recherche
+          appliquée, acquise sur le terrain, en centre R&D et jeunes startups.
+          <br />
+          Autodidacte sur la partie Frontend & Design.
         </p>
-        <Separator className="bg-foreground my-4" />
-        <TypographyHeading as="h3">COMPÉTENCES CLÉS</TypographyHeading>
-        <div className="mt-4 grid grid-cols-3 gap-2">
+      </div>
+
+      <div>
+        <TypographyHeading as="h4">COMPÉTENCES CLÉS</TypographyHeading>
+
+        <div className="mt-2 grid grid-cols-3 gap-2">
           {SKILLS.map((item, index) => (
             <Card key={index} className="items-center px-0 py-4">
               <CardContent className="flex items-center gap-2 text-sm font-semibold tracking-tighter">
@@ -113,14 +119,22 @@ export function RectoPage() {
             </Card>
           ))}
         </div>
-        <Separator className="bg-foreground my-4" />
-        <TypographyHeading as="h3">FRAMEWORK & TECHNOLOGIES</TypographyHeading>
-        <div className="flex flex-col gap-4">
-          <TypographyBlockquote className="text-secondary text-xs font-medium">
-            Ce que je préfère, mais je suis toujours curieux d&apos;apprendre de
-            nouvelles choses...
-          </TypographyBlockquote>
+      </div>
 
+      <div>
+        <div className="flex justify-between">
+          <TypographyHeading as="h4">
+            FRAMEWORK & TECHNOLOGIES
+          </TypographyHeading>
+          <div className="flex items-center gap-4 text-sm">
+            <Clock className="size-4" />
+            <span className="font-medium">
+              Pas utiliser depuis un moment...
+            </span>
+          </div>
+        </div>
+
+        <div className="mt-2 flex flex-col gap-4">
           <div className="grid grid-cols-2 gap-4">
             {STACKS.map(({ name, items }, index) => (
               <Card key={index} className="gap-0 p-4">
@@ -135,45 +149,10 @@ export function RectoPage() {
               </Card>
             ))}
           </div>
-          <div className="flex items-center gap-4">
-            <Clock className="size-4" />
-            <span>Pas utiliser depuis un moment...</span>
-          </div>
         </div>
-      </Body>
-      <Footer />
-    </PdfPage>
-  );
-}
-
-function Hero({
-  image,
-  children,
-}: { image: React.ReactNode } & React.HtmlHTMLAttributes<HTMLDivElement>) {
-  return (
-    <header className="relative flex w-full">
-      <div className="relative z-10 size-full">
-        <svg
-          viewBox="0 0 110 20"
-          preserveAspectRatio="none"
-          aria-hidden="true"
-          className="fill-secondary absolute inset-y-0 right-0 size-full transform"
-        >
-          <polygon points="0,0 90,0 50,100 0,100" />
-        </svg>
-
-        <div className="relative">{children}</div>
       </div>
-
-      <div className="absolute inset-y-0 right-0 w-1/2 overflow-hidden">
-        {image}
-      </div>
-    </header>
+    </div>
   );
-}
-
-function Body({ children }: React.HtmlHTMLAttributes<HTMLDivElement>) {
-  return <div className="p-4">{children}</div>;
 }
 
 function Footer() {
@@ -183,37 +162,18 @@ function Footer() {
     year: "numeric",
   });
   return (
-    <footer className="bg-secondary flex w-full flex-1 items-center justify-between p-2">
-      <p className="text-accent-light text-sm">
-        {"©"} {buildDate.getFullYear()}{" "}
-        {"Marc Le Labourier. All rights reserved."}
-      </p>
-      <p className="text-accent-light text-sm">
-        {"Last updated:"} {formattedDate}
-      </p>
+    <footer className="flex w-full items-center justify-between px-8 pt-8">
+      <div className="relative flex flex-col items-center justify-center">
+        <TypographyHeading as="h5">EN SAVOIR PLUS SUR MOI</TypographyHeading>
+        <Qrcode value={PERSONNAL_WEBSITE} size={100} />
+      </div>
 
-      <Pagination className="mx-0 w-fit">
-        <PaginationContent>
-          <PaginationItem>
-            <PaginationLink
-              className="bg-card border-accent text-primary"
-              href="#"
-              isActive
-            >
-              1
-            </PaginationLink>
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationLink className="bg-background" href="#">
-              2
-            </PaginationLink>
-          </PaginationItem>
+      <Copyright className="text-accent-light mb-12 h-full flex-col justify-end gap-4" />
 
-          <PaginationItem>
-            <PaginationNext className="text-background" href="#" />
-          </PaginationItem>
-        </PaginationContent>
-      </Pagination>
+      <div className="flex flex-col items-center justify-center">
+        <TypographyHeading as="h5">LE CODE SOURCE DE CE CV</TypographyHeading>
+        <Qrcode value="https://github.com/lelabo-m/cv-2025" size={100} />
+      </div>
     </footer>
   );
 }

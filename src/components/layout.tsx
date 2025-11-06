@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import React from "react";
 
 export function PdfDocument({
   children,
@@ -23,5 +24,30 @@ export function PdfPage({
     >
       {children}
     </main>
+  );
+}
+
+export function Copyright(props: React.HTMLAttributes<HTMLDivElement>) {
+  const buildDate = new Date();
+  const formattedDate = buildDate.toLocaleString("en-US", {
+    month: "long",
+    year: "numeric",
+  });
+  return (
+    <div
+      {...props}
+      className={cn(
+        "flex w-full items-center justify-between text-xs font-semibold",
+        props.className,
+      )}
+    >
+      <span>
+        {"©"} {buildDate.getFullYear()}{" "}
+        {"Marc Le Labourier. All rights reserved."}
+      </span>
+      <span>
+        {"Last updated:"} {formattedDate}
+      </span>
+    </div>
   );
 }

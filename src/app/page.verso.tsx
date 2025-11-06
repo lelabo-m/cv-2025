@@ -9,7 +9,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 
-import { PdfPage } from "@/components/layout";
+import { Copyright, PdfPage } from "@/components/layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Timeline,
@@ -26,9 +26,12 @@ import { Experience, TIMELINE } from "./config";
 
 export function VersoPage() {
   return (
-    <PdfPage>
+    <PdfPage className="from-fiery-glow/60 via-pumpkin-vapor/35 to-venetian-lace bg-linear-320 from-0% via-20% to-80%">
       <ExperienceTimeline />
       <HobbyCarousel />
+      <footer className="w-full px-8 pt-4">
+        <Copyright className="text-fence-green" />
+      </footer>
     </PdfPage>
   );
 }
@@ -48,7 +51,7 @@ function ExperienceTimeline() {
 
         return (
           <TimelineItem key={index} className="w-full after:content-none">
-            <div className="text-accent-light mt-1 flex min-w-12 flex-col items-center justify-between text-[10px] after:flex-1">
+            <div className="text-accent-light mt-1 flex min-w-14 flex-col items-center justify-between text-[10px] font-semibold after:flex-1">
               <span>{experience.when.end}</span>
               <span>{experience.when.start}</span>
             </div>
@@ -79,7 +82,7 @@ function ExperienceTimeline() {
 
 function HobbyCarousel() {
   return (
-    <div className="grid h-80 grid-cols-3 gap-4 px-8 py-4">
+    <div className="-mt-8 grid h-80 grid-cols-3 gap-4 px-8 py-4">
       <Card className="relative overflow-hidden">
         <Image
           src="/image1.jpg"
@@ -135,7 +138,7 @@ function HobbyCarousel() {
             <li>Jeux de rôle</li>
             <li>
               Santé
-              <ul className="text-macadamia-beige ml-4 list-disc">
+              <ul className="mt-2 ml-6 list-disc">
                 <li>anatomie</li>
                 <li>physiologie</li>
                 <li>métabolisme</li>

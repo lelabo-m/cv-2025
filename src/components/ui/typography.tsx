@@ -3,15 +3,15 @@ import { cva, VariantProps } from "class-variance-authority";
 import React from "react";
 
 const headingVariants = cva(
-  "text-foreground scroll-m-20  tracking-tight text-pretty",
+  "text-foreground scroll-m-20 tracking-tight text-pretty font-heading",
   {
     variants: {
       level: {
-        h1: "text-3xl font-semibold text-macadamia-beige text-shadow-sm text-shadow-accent/50",
-        h2: "text-5xl font-semibold text-accent-light text-shadow-sm text-shadow-venetian-lace/50",
-        h3: "text-xl font-semibold underline",
-        h4: "",
-        h5: "",
+        h1: "text-3xl font-extrabold text-macadamia-beige text-shadow-sm text-shadow-fence-green/50 italic",
+        h2: "text-5xl font-black italic text-accent text-shadow-sm text-shadow-fence-green/50 ",
+        h3: "text-xl text-accent-light font-semibold text-shadow-sm text-shadow-fence-green/50 italic",
+        h4: "text-xl font-semibold underline text-fence-green ",
+        h5: "text-xs font-semibold text-accent ",
         h6: "",
       },
     },

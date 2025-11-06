@@ -92,7 +92,7 @@ export const STACKS = [
       },
       {
         name: "Ruby/Rails",
-        mastery: 3,
+        mastery: 2,
         rusty: true,
       },
     ],
@@ -114,11 +114,11 @@ export const STACKS = [
       },
       {
         name: "NextJs",
-        mastery: 5,
+        mastery: 4,
       },
       {
         name: "Tailwind Css",
-        mastery: 4,
+        mastery: 3,
       },
     ],
   },
@@ -141,7 +141,7 @@ export const STACKS = [
       },
       {
         name: "Kubernetes",
-        mastery: 2,
+        mastery: 1,
         rusty: true,
       },
     ],
@@ -161,9 +161,13 @@ export const STACKS = [
       },
       {
         name: "IA",
-        mastery: 4,
+        mastery: 5,
         max: 12,
         rusty: true,
+      },
+      {
+        name: "LLM",
+        mastery: 2,
       },
     ],
   },
@@ -222,9 +226,8 @@ export const TIMELINE = [
     what: (
       <ExperienceDescription>
         <span>
-          Rôle de 1er plan dans la transition et la restructuration d&apos;une
-          agence AdTech à un &quot;pur player&quot; technologique spécialisée
-          dans la collecte et l&apos;agrégation de données mobiles.
+          Rôle de 1er plan dans la restructuration d&apos;agence AdTech en{" "}
+          <b>pur player technologique</b>.
         </span>
         <ExperienceBulletPoints>
           <li>Co-dirigé la stratégie technique aux côtés des CEO.</li>
@@ -256,7 +259,7 @@ export const TIMELINE = [
       <ExperienceDescription>
         <span>
           Contribution majeure pendant la croissance de l&apos;entreprise (6 →
-          50 pers.).
+          52 pers.).
         </span>
       </ExperienceDescription>
     ),
