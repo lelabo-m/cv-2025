@@ -108,7 +108,8 @@ function HobbyCarousel() {
           <ul className="text-venetian-lace flex list-disc flex-col gap-4 text-sm font-semibold text-nowrap">
             <li>Manga & Webtoons</li>
             <li>Jeux de vidéo et de société</li>
-            <li>Podcasts et fiction audio</li>
+            <li>Fiction audio</li>
+            <li>Jeux de rôle</li>
           </ul>
         </CardContent>
       </Card>
@@ -133,19 +134,19 @@ function HobbyCarousel() {
             Intérêts
           </CardTitle>
         </CardHeader>
-        <CardContent className="relative z-10 flex h-full flex-col px-6">
+        <CardContent className="relative z-10 -mt-2 flex h-full flex-col px-6">
           <ul className="text-venetian-lace flex list-disc flex-col gap-4 text-sm font-semibold">
-            <li>Jeux de rôle</li>
             <li>
               Santé
-              <ul className="mt-2 ml-6 list-disc">
-                <li>anatomie</li>
-                <li>physiologie</li>
-                <li>métabolisme</li>
-                <li>nutrition</li>
+              <ul className="mt-2 ml-6 flex list-disc flex-col gap-1">
+                <li>Anatomie</li>
+                <li>Physiologie</li>
+                <li>Métabolisme</li>
+                <li>Nutrition</li>
               </ul>
             </li>
-            <li>Montage photo & vidéo</li>
+            <li>Cuisine</li>
+            <li>Montage Vidéo</li>
           </ul>
         </CardContent>
       </Card>
