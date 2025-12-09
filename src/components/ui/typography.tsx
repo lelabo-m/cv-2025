@@ -7,10 +7,10 @@ const headingVariants = cva(
   {
     variants: {
       level: {
-        h1: "text-3xl font-extrabold text-macadamia-beige text-shadow-sm text-shadow-fence-green/50 italic",
-        h2: "text-5xl font-black italic text-accent text-shadow-sm text-shadow-fence-green/50 ",
-        h3: "text-xl text-accent-light font-semibold text-shadow-sm text-shadow-fence-green/50 italic",
-        h4: "text-xl font-semibold underline text-fence-green ",
+        h1: "text-3xl font-extrabold text-shadow-sm text-shadow-fence-green/50 italic",
+        h2: "text-4xl font-black italic text-accent text-shadow-sm text-shadow-fence-green/50 ",
+        h3: "text-2xl text-accent-light font-semibold text-shadow-sm text-shadow-fence-green/50 italic",
+        h4: "text-xl font-semibold underline text-fiery-glow ",
         h5: "text-xs font-semibold text-accent ",
         h6: "",
       },

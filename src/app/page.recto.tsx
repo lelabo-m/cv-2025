@@ -1,4 +1,4 @@
-import { Clock, Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import Image from "next/image";
 
 import { ContactAnimatedPill, ContactAnimatedText } from "@/components/contact";
@@ -12,7 +12,8 @@ import { PERSONNAL_WEBSITE, PROFILE, SKILLS, STACKS } from "./config";
 
 export function RectoPage() {
   return (
-    <PdfPage className="from-fence-green/80 via-norfolk-green/40 to-venetian-lace bg-linear-160 from-0% via-40% to-80%">
+    <PdfPage className="from-fence-green/90 via-norfolk-green/40 to-venetian-lace bg-linear-160 from-0% via-30% to-80%">
+      {/* <PdfPage className="bg-venetian-lace"> */}
       <Header />
       <Body />
       <Footer />
@@ -22,15 +23,17 @@ export function RectoPage() {
 
 function Header() {
   return (
-    <header className="w-full p-4">
-      <div className="relative flex w-full">
+    <header className="bg-macadamia-beige/90 w-full rounded-2xl">
+      <div className="relative flex h-full w-full overflow-hidden rounded-2xl">
         <div className="z-10 flex w-full flex-col gap-2 p-4">
-          <TypographyHeading as="h1">{PROFILE.name}</TypographyHeading>
-          <TypographyHeading as="h2" className="ml-8">
+          <TypographyHeading as="h1" className="text-norfolk-green">
+            {PROFILE.name}
+          </TypographyHeading>
+          <TypographyHeading as="h2" className="ml-6">
             {PROFILE.jobTitle}
           </TypographyHeading>
-          <TypographyHeading as="h3" className="ml-28">
-            Disponible — CDI mi-temps — RQTH
+          <TypographyHeading as="h3" className="ml-20">
+            Disponible Immédiatement - CDI - RQTH
           </TypographyHeading>
 
           <Contacts />
@@ -58,12 +61,12 @@ function Contacts() {
   return (
     <div className="flex justify-between">
       <div className="flex gap-2">
-        <ContactAnimatedText className="text-background">
+        <ContactAnimatedText className="text-foreground font-semibold">
           <Mail className="size-4" />
           {PROFILE.email}
         </ContactAnimatedText>
 
-        <ContactAnimatedText className="text-background">
+        <ContactAnimatedText className="text-foreground font-semibold">
           <Phone className="size-4" />
           {PROFILE.phone}
         </ContactAnimatedText>
@@ -94,7 +97,7 @@ function Contacts() {
 
 function Body() {
   return (
-    <div className="flex flex-col gap-4 px-4">
+    <div className="flex flex-col gap-4 px-4 pt-4">
       <div>
         <TypographyHeading as="h4">PROFIL</TypographyHeading>
         <p className="text-foreground mt-2 w-full font-medium text-pretty">
@@ -111,8 +114,8 @@ function Body() {
 
         <div className="mt-2 grid grid-cols-3 gap-2">
           {SKILLS.map((item, index) => (
-            <Card key={index} className="items-center px-0 py-4">
-              <CardContent className="flex items-center gap-2 text-sm font-semibold tracking-tighter">
+            <Card key={index} className="items-center p-4">
+              <CardContent className="flex items-center gap-2 p-0 text-sm font-semibold tracking-tighter">
                 <item.icon className="size-6" />
                 {item.title}
               </CardContent>
@@ -126,12 +129,12 @@ function Body() {
           <TypographyHeading as="h4">
             FRAMEWORK & TECHNOLOGIES
           </TypographyHeading>
-          <div className="flex items-center gap-4 text-sm">
+          {/* <div className="flex items-center gap-4 text-sm">
             <Clock className="size-4" />
             <span className="font-medium">
               Pas utiliser depuis un moment...
             </span>
-          </div>
+          </div> */}
         </div>
 
         <div className="mt-2 flex flex-col gap-4">

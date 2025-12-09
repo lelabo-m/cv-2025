@@ -13,7 +13,7 @@ export const PERSONNAL_WEBSITE = "https://marc.lelabourier.com";
 
 export const PROFILE = {
   name: "Marc Le Labourier",
-  jobTitle: "Full Stack Developer",
+  jobTitle: "Software · Full Stack · Data Engineer",
   email: "marc.lelabourier@gmail.com",
   phone: "(+33)0638415550",
   location: "Clermont Ferrand, France",
@@ -147,7 +147,7 @@ export const STACKS = [
     ],
   },
   {
-    name: "Thématiques",
+    name: "Autres Thématiques",
     items: [
       {
         name: "Sécurité",
@@ -232,7 +232,7 @@ export const TIMELINE = [
         <ExperienceBulletPoints>
           <li>Co-dirigé la stratégie technique aux côtés des CEO.</li>
           <li>
-            Management des équipes <b>infrastructure & services</b> et{" "}
+            Management de deux équipes : <b>infrastructure & services</b> et{" "}
             <b>recherche</b>.
           </li>
           <li>
@@ -291,15 +291,15 @@ export const TIMELINE = [
       </ExperienceDescription>
     ),
   },
-  {
-    title: "Assistant Pédagogique Régional",
-    type: "job",
-    where: "Epitech",
-    when: {
-      start: "Jan. 2014",
-      end: "Juil. 2014",
-    },
-  },
+  // {
+  //   title: "Assistant Pédagogique Régional",
+  //   type: "job",
+  //   where: "Epitech",
+  //   when: {
+  //     start: "Jan. 2014",
+  //     end: "Juil. 2014",
+  //   },
+  // },
   {
     title: "Développeur Full Stack",
     type: "job",

@@ -18,7 +18,7 @@ export function PdfPage({
   return (
     <main
       className={cn(
-        "bg-background flex h-[29.7cm] w-[21cm] flex-col items-start",
+        "bg-background flex h-[29.7cm] w-[21cm] flex-col items-start justify-between p-4",
         className,
       )}
     >

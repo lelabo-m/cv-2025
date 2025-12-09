@@ -12,7 +12,7 @@
   --fence-green: oklch(0.2907 0.0468 179.28); /* #09332c; */
 
   --background: var(--venetian-lace);
-  --foreground: var(--norfolk-green);
+  --foreground: var(--fence-green);
   --card: var(--macadamia-beige);
   --card-foreground: var(--norfolk-green);
   --primary: var(--norfolk-green);

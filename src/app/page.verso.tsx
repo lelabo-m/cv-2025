@@ -27,6 +27,7 @@ import { Experience, TIMELINE } from "./config";
 export function VersoPage() {
   return (
     <PdfPage className="from-fiery-glow/60 via-pumpkin-vapor/35 to-venetian-lace bg-linear-320 from-0% via-20% to-80%">
+      {/* <PdfPage className="bg-venetian-lace"> */}
       <ExperienceTimeline />
       <HobbyCarousel />
       <footer className="w-full px-8 pt-4">
@@ -85,7 +86,7 @@ function HobbyCarousel() {
     <div className="-mt-8 grid h-80 grid-cols-3 gap-4 px-8 py-4">
       <Card className="relative overflow-hidden">
         <Image
-          src="/image1.jpg"
+          src="/image2.jpg"
           alt="Marc working on his desktop."
           fill
           sizes="(max-width: 640px) 100vw, 33vw"
@@ -115,7 +116,7 @@ function HobbyCarousel() {
       </Card>
       <Card className="relative overflow-hidden">
         <Image
-          src="/image2.jpg"
+          src="/image4.jpg"
           alt="Marc reading an upside down book while simultaneously playing chess."
           fill
           sizes="(max-width: 640px) 100vw, 33vw"
@@ -134,19 +135,12 @@ function HobbyCarousel() {
             Intérêts
           </CardTitle>
         </CardHeader>
-        <CardContent className="relative z-10 -mt-2 flex h-full flex-col px-6">
+        <CardContent className="relative z-10 -mt-2 flex h-full flex-col p-6">
           <ul className="text-venetian-lace flex list-disc flex-col gap-4 text-sm font-semibold">
-            <li>
-              Santé
-              <ul className="mt-2 ml-6 flex list-disc flex-col gap-1">
-                <li>Anatomie</li>
-                <li>Physiologie</li>
-                <li>Métabolisme</li>
-                <li>Nutrition</li>
-              </ul>
-            </li>
-            <li>Cuisine</li>
-            <li>Montage Vidéo</li>
+            <li>La Cuisine</li>
+            <li>La Physiologie </li>
+            <li>Les Sciences</li>
+            <li>Mon chat</li>
           </ul>
         </CardContent>
       </Card>

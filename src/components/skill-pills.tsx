@@ -1,6 +1,5 @@
 import { Technology } from "@/app/config";
 import { cn } from "@/lib/utils";
-import { Clock } from "lucide-react";
 
 export default function SkillPills({
   name,
@@ -29,7 +28,7 @@ export default function SkillPills({
           </span>
         ))}
 
-        <Clock className={cn("size-4", rusty ? "visible" : "invisible")} />
+        {/* <Clock className={cn("size-4", rusty ? "visible" : "invisible")} /> */}
       </div>
     </div>
   );
